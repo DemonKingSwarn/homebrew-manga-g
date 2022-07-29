@@ -1,11 +1,15 @@
 class MangaG < Formula
-  desc "Watch some mangos."
-  homepage "https://github.com/manga-g/manga-g/"
-  url "https://github.com/manga-g/manga-g/releases/download/v0.1.0alpha/MangaG"
+  desc "check some mangos"
+  homepage "https://manga-g.pages.dev"
+  url "https://github.com/manga-g/manga-g/archive/refs/tags/v0.1.0alpha.tar.gz"
+  sha256 "cebb3fa0b08f10dc96d3de10030717fc98f6a196be610eba1bfceb8069555eeb"
   license "MIT"
 
   def install
-    bin.install "MangaG"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
   end
-  cmd = "echo 'hi'"
+
+  test do
+    system "false"
+  end
 end
